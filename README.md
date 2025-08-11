@@ -1,16 +1,16 @@
-# Python bindings for F.A.C.C.T. XDR REST API
+# Python bindings for F6 XDR REST API
 
-**Latest Version: 1.0.0**
+**Latest Version: 1.0.1**
 
 ## Description
 
-The F.A.C.C.T. XDR Python Client enables you to fully integrate F.A.C.C.T. XDR MDP into your malware analysis framework.
-F.A.C.C.T. XDR MDP is a Malware Detonation & Research platform designed for deep dynamic analysis and enhanced indicators extraction.
+The F6 XDR Python Client enables you to fully integrate F6 XDR MDP into your malware analysis framework.
+F6 XDR MDP is a Malware Detonation & Research platform designed for deep dynamic analysis and enhanced indicators extraction.
 
 You can use this library with
 
- * [F.A.C.C.T. XDR Cloud](https://xdr.facct.ru) — our Cloud hosted instance
- * [On-premise installations of F.A.C.C.T. XDR](https://www.facct.ru/products/managed-xdr/) — for even more power and privacy
+ * [F6 XDR Cloud](https://xdr.f6.security) — our Cloud hosted instance
+ * [On-premise installations of F6 XDR](https://www.f6.ru/products/managed-xdr/) — for even more power and privacy
 
  ## License
 
@@ -32,8 +32,8 @@ For upgrading `pyxdr` to a more recent version, use
 
 ### API Key
 
-In order to perform any queries via the API, you will need to get the API token for your F.A.C.C.T. XDR user.
-1. Open F.A.C.C.T. XDR web interface.
+In order to perform any queries via the API, you will need to get the API token for your F6 XDR user.
+1. Open F6 XDR web interface.
 2. Navigate to "Profile" and click "Generate Auth Token".
 3. Copy this token. This is your API Key.
 

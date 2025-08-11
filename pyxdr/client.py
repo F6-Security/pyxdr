@@ -89,7 +89,7 @@ class Client:
     def _get_fid(self, resp):
         fids = resp["data"].get("ids", [])
         if not fids:
-            raise ApiError("No file ID returned from F.A.C.C.T. XDR")
+            raise ApiError("No file ID returned from F6 XDR")
         return fids[0]
 
     def ping(self):
