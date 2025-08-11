@@ -1,5 +1,5 @@
 class ApiError(Exception):
-    """Base class for all F.A.C.C.T. XDR API errors; also raised for generic internal errors."""
+    """Base class for all F6 XDR API errors; also raised for generic internal errors."""
 
     def __init__(self, message=None, original_exception=None):
         """

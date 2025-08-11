@@ -77,7 +77,7 @@ ATTACH_ANSWER = {
                 "sandbox_url": None,
                 "sandbox_version": None,
                 "search_id": "43747305",
-                "sensor": "F.A.C.C.T. XDR",
+                "sensor": "F6 XDR",
                 "sha1": "9064747b9dc499a5d05611c51650e2f6da2003ec",
                 "sha256": "3e9eecec9964cb43bcf38900cf3860f70eb0fb1c7887958f234b0e4c45a0abd7",
                 "source": "MANUAL",
@@ -99,7 +99,7 @@ SHORT_INFO = {
     "id": ANALYSIS_ID,
     "status": "FINISHED",
     "verdict": True,
-    "report_url": "https://xdr.facct.ru/warehouse/{}/{}/attaches/{}/".format(COMMIT, REPORT_ID, ANALYSIS_ID)
+    "report_url": "https://xdr.f6.security/warehouse/{}/{}/attaches/{}/".format(COMMIT, REPORT_ID, ANALYSIS_ID)
 }
 
 REPORT_ANSWER = {
@@ -137,7 +137,7 @@ HASH_REPUTATION_ANSWER = {
 
 class MockedClient(Client):
     def __init__(self):
-        self.base_url = "https://xdr.facct.ru"
+        self.base_url = "https://xdr.f6.security"
 
     def _http_request(self, method, url_suffix, params=None, data=None, files=None, decode=True):
         FILE_INFO = ATTACH_ANSWER["data"]["results"][0]

@@ -11,12 +11,12 @@ from .error import ApiError, ObjectNotFoundError
 class MDP:
     def __init__(self, api_key=None, api_url=None, verify_ssl=None, timeout=None, proxies=None, retries=None, user_agent=None):
         """
-        Create a F.A.C.C.T. XDR MDP object.
+        Create a F6 XDR MDP object.
 
         Parameters:
-            api_key:    F.A.C.C.T. XDR API Key
-            api_url:    F.A.C.C.T. XDR API URL
-                        (default is https://xdr.facct.ru/)
+            api_key:    F6 XDR API Key
+            api_url:    F6 XDR API URL
+                        (default is https://xdr.f6.security/)
             verify_ssl: Enable or disable checking SSL certificates
             timeout:    Timeout in seconds for accessing the API.
                         Raises a ConnectionError on timeout
@@ -24,7 +24,7 @@ class MDP:
             retries:    Number of times requests should be retried
                         if they timeout
             user_agent: The user agent. Use this when you write an integration
-                        with F.A.C.C.T. XDR so that it is possible to track
+                        with F6 XDR so that it is possible to track
                         how often an integration is being used
         """
         self.client = Client(
@@ -55,7 +55,7 @@ class MDP:
 
     def ping(self):
         """
-            Check if F.A.C.C.T. XDR server is online.
+            Check if F6 XDR server is online.
             Returns "OK" if all is good else raises ClientError.
         """
         return self.client.ping()
@@ -64,7 +64,7 @@ class MDP:
                     op_system=None, capacity=None, context_file=None, av=None, dns=None, vm_route=None, clock=None, priority=None,
                     human=None, wl=None, arguments=None, fsmtp=None, no_validation=None, extract_strings=None, internet=None):
         """
-            Detonate file in F.A.C.C.T. XDR MDP.
+            Detonate file in F6 XDR MDP.
 
             Parameters:
                 file_obj:           The sample to detonate. Must be a file-like object
@@ -131,7 +131,7 @@ class MDP:
                    context_file=None, av=None, dns=None, vm_route=None, clock=None, priority=None, human=None, wl=None,
                    arguments=None, fsmtp=None, no_validation=None, extract_strings=None, internet=None):
         """
-            Detonate URL in F.A.C.C.T. XDR MDP.
+            Detonate URL in F6 XDR MDP.
 
             Parameters:
                 url:                The URL to detonate

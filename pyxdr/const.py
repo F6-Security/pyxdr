@@ -1,4 +1,4 @@
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 XDR_API_KEY = "XDR_API_KEY"
 XDR_API_URL = "XDR_API_URL"
@@ -9,7 +9,7 @@ XDR_PROXIES = "XDR_PROXIES"
 XDR_USER_AGENT = "XDR_USER_AGENT"
 
 DEFAULTS = {
-    XDR_API_URL: "https://xdr.facct.ru/",
+    XDR_API_URL: "https://xdr.f6.security/",
     XDR_VERIFY_SSL: True,
     XDR_CONNECTION_RETRIES: 3,
     XDR_CONNECTION_TIMEOUT: 10,
