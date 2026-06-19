@@ -19,7 +19,7 @@ class PyTest(TestCommand):
 
 
 setup(name='pyxdr',
-      version='1.0.1',
+      version='1.0.2',
       author='F6 XDR',
       author_email='mxdr@f6.ru',
       license='MIT',

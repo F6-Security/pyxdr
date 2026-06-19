@@ -1,4 +1,4 @@
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 XDR_API_KEY = "XDR_API_KEY"
 XDR_API_URL = "XDR_API_URL"
@@ -56,13 +56,13 @@ class Url:
     ATTACHES = API + "attaches/"
     ATTACH = ATTACHES + "?id={}"
 
-    REPORT = ATTACHES + "{attach_id}/{commit}/{report_id}/mdp_report/"
+    REPORT = ATTACHES + "{attach_id}/{commit}/{report_id}/polygon_report/"
     UI_REPORT = "warehouse/{commit}/{report_id}/attaches/{attach_id}/"
 
-    EXPORT_REPORT = ATTACHES + "{attach_id}/{commit}/{report_id}/mdp_report_export/"
+    EXPORT_REPORT = ATTACHES + "{attach_id}/{commit}/{report_id}/polygon_report_export/"
     EXPORT_PDF_REPORT = EXPORT_REPORT + '?report_export_format=pdf'
-    EXPORT_PCAP = ATTACHES + '{attach_id}/{commit}/{report_id}/dump.pcap/dump.pcap/mdp_report_file_download/'
-    EXPORT_VIDEO = ATTACHES + '{attach_id}/{commit}/{report_id}/shots/video.webm/video.webm/mdp_report_file_download/'
+    EXPORT_PCAP = ATTACHES + '{attach_id}/{commit}/{report_id}/dump.pcap/dump.pcap/polygon_report_file_download/'
+    EXPORT_VIDEO = ATTACHES + '{attach_id}/{commit}/{report_id}/shots/video.webm/video.webm/polygon_report_file_download/'
     
     HASH_REPUTATION = API + 'warehouse/check_hash/{}/{}/'
 
