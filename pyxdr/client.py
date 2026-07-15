@@ -104,7 +104,8 @@ class Client:
         return filtered_data
 
     def upload_file(self, file_name, file_obj, password, language, mp, timeout, resolution, op_system, capacity, context_file,
-                    av, dns, vm_route, clock, priority, human, internet, wl, arguments, fsmtp, no_validation, extract_strings):
+                    av, dns, vm_route, clock, priority, human, internet, wl, arguments, fsmtp, no_validation, extract_strings,
+                    analyze_dll, analyze_all_dll):
         data = {
             "language": language,
             "context_file": context_file,
@@ -121,6 +122,8 @@ class Client:
             "no_validation": no_validation,
             "extract_strings": extract_strings,
             "internet": internet,
+            "analyze_dll": analyze_dll,
+            "analyze_all_dll": analyze_all_dll,
             "arguments": arguments,
             "timeout": timeout,
             "resolution": resolution,
@@ -137,7 +140,8 @@ class Client:
         return self._get_fid(resp)
 
     def upload_link(self, link, password, language, mp, timeout, resolution, op_system, capacity, context_file,
-                    av, dns, vm_route, clock, priority, human, internet, wl, arguments, fsmtp, no_validation, extract_strings):
+                    av, dns, vm_route, clock, priority, human, internet, wl, arguments, fsmtp, no_validation, extract_strings,
+                    analyze_dll, analyze_all_dll):
         data = {
             "link": link,
             "language": language,
@@ -155,6 +159,8 @@ class Client:
             "no_validation": no_validation,
             "extract_strings": extract_strings,
             "internet": internet,
+            "analyze_dll": analyze_dll,
+            "analyze_all_dll": analyze_all_dll,
             "arguments": arguments,
             "timeout": timeout,
             "resolution": resolution,

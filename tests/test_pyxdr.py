@@ -15,10 +15,23 @@ class TestMDP(TestCase):
         f = BytesIO(MALICIOUS_URL.encode())
         a = self.mdp.upload_file(f)
         self.assertEqual(a.id, ANALYSIS_ID)
+
+    def test_upload_file_with_dll_analysis_options(self):
+        f = BytesIO(MALICIOUS_URL.encode())
+        self.mdp.upload_file(f, analyze_dll=True, analyze_all_dll=False)
+        data = self.mdp.client.last_request["data"]
+        self.assertIs(data["analyze_dll"], True)
+        self.assertIs(data["analyze_all_dll"], False)
     
     def test_upload_url(self):
         analysis = self.mdp.upload_url(MALICIOUS_URL)
         self.assertEqual(analysis.id, ANALYSIS_ID)
+
+    def test_upload_url_with_dll_analysis_options(self):
+        self.mdp.upload_url(MALICIOUS_URL, analyze_dll=False, analyze_all_dll=True)
+        data = self.mdp.client.last_request["data"]
+        self.assertIs(data["analyze_dll"], False)
+        self.assertIs(data["analyze_all_dll"], True)
     
     def test_get_info(self):
         analysis = self.mdp.upload_url(MALICIOUS_URL)

@@ -1,6 +1,6 @@
 # Python bindings for F6 XDR REST API
 
-**Latest Version: 1.0.2**
+**Latest Version: 1.1.0**
 
 ## Description
 

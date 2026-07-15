@@ -138,8 +138,17 @@ HASH_REPUTATION_ANSWER = {
 class MockedClient(Client):
     def __init__(self):
         self.base_url = "https://xdr.f6.security"
+        self.last_request = None
 
     def _http_request(self, method, url_suffix, params=None, data=None, files=None, decode=True):
+        self.last_request = {
+            "method": method,
+            "url_suffix": url_suffix,
+            "params": params,
+            "data": data,
+            "files": files,
+            "decode": decode,
+        }
         FILE_INFO = ATTACH_ANSWER["data"]["results"][0]
         if url_suffix == Url.ANALGIN_UPLOAD:
             return ANALGIN_UPLOAD_ANSWER

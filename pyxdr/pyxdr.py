@@ -62,7 +62,8 @@ class MDP:
 
     def upload_file(self, file_obj, file_name=None, password=None, language=None, mp=None, timeout=None, resolution=None,
                     op_system=None, capacity=None, context_file=None, av=None, dns=None, vm_route=None, clock=None, priority=None,
-                    human=None, wl=None, arguments=None, fsmtp=None, no_validation=None, extract_strings=None, internet=None):
+                    human=None, wl=None, arguments=None, fsmtp=None, no_validation=None, extract_strings=None, internet=None,
+                    analyze_dll=None, analyze_all_dll=None):
         """
             Detonate file in F6 XDR MDP.
 
@@ -88,6 +89,8 @@ class MDP:
                 no_validation:      Disables automatic validation of the analysis (0, 1)
                 extract_strings:    Extract all strings from samples (0, 1)
                 internet:           Disables or enables internet on VM (0, 1)
+                analyze_dll:        Enables or disables dll analysis (0, 1)
+                analyze_all_dll:    Enables or disables dll analysis. Even if the dll is not the main package (0, 1)
                 timeout:            Detonation timeout
                 resolution:         The screen resolution
                 op_system:          The system of VM (Windows XP, 7, 10)
@@ -124,12 +127,15 @@ class MDP:
             timeout=timeout,
             resolution=resolution,
             op_system=op_system,
-            capacity=capacity
+            capacity=capacity,
+            analyze_dll=analyze_dll,
+            analyze_all_dll=analyze_all_dll
         )
     
     def upload_url(self, url, password=None, language=None, mp=None, timeout=None, resolution=None, op_system=None, capacity=None,
                    context_file=None, av=None, dns=None, vm_route=None, clock=None, priority=None, human=None, wl=None,
-                   arguments=None, fsmtp=None, no_validation=None, extract_strings=None, internet=None):
+                   arguments=None, fsmtp=None, no_validation=None, extract_strings=None, internet=None, analyze_dll=None,
+                   analyze_all_dll=None):
         """
             Detonate URL in F6 XDR MDP.
 
@@ -153,6 +159,8 @@ class MDP:
                 no_validation:      Disables automatic validation of the analysis (0, 1)
                 extract_strings:    Extract all strings from samples (0, 1)
                 internet:           Disables or enables internet on VM (0, 1)
+                analyze_dll:        Enables or disables dll analysis (0, 1)
+                analyze_all_dll:    Enables or disables dll analysis. Even if the dll is not the main package (0, 1)
                 timeout:            Detonation timeout
                 resolution:         The screen resolution
                 op_system:          The system of VM (Windows XP, 7, 10)
@@ -182,7 +190,9 @@ class MDP:
             timeout=timeout,
             resolution=resolution,
             op_system=op_system,
-            capacity=capacity
+            capacity=capacity,
+            analyze_dll=analyze_dll,
+            analyze_all_dll=analyze_all_dll
         )
     
     def get_hash_reputation(self, hash_type, hash):
@@ -206,7 +216,8 @@ class MDP:
 
 class Analysis:
     def __init__(self, client, context_file, password, language, mp, timeout, av, dns, vm_route, clock, priority, human,
-                 wl, arguments, fsmtp, no_validation, extract_strings, internet, resolution, op_system, capacity):
+                 wl, arguments, fsmtp, no_validation, extract_strings, internet, resolution, op_system, capacity,
+                 analyze_dll, analyze_all_dll):
         """
             Create an Analysis object.
         """
@@ -232,6 +243,8 @@ class Analysis:
         self.resolution = resolution
         self.op_system = op_system
         self.capacity = capacity
+        self.analyze_dll = analyze_dll
+        self.analyze_all_dll = analyze_all_dll
         self.status = None
         self.verdict = None
         self.report = None
@@ -300,6 +313,8 @@ class Analysis:
             "resolution": self.resolution,
             "system": self.op_system,
             "capacity": self.capacity,
+            "analyze_dll": self.analyze_dll,
+            "analyze_all_dll": self.analyze_all_dll,
         }
 
     def get_info(self, extended=True):
@@ -398,7 +413,9 @@ class FileAnalysis(Analysis):
             timeout=self.timeout,
             resolution=self.resolution,
             op_system=self.op_system,
-            capacity=self.capacity
+            capacity=self.capacity,
+            analyze_dll=self.analyze_dll,
+            analyze_all_dll=self.analyze_all_dll
         )
         super()._run()
     
@@ -459,7 +476,9 @@ class LinkAnalysis(Analysis):
             timeout=self.timeout,
             resolution=self.resolution,
             op_system=self.op_system,
-            capacity=self.capacity
+            capacity=self.capacity,
+            analyze_dll=self.analyze_dll,
+            analyze_all_dll=self.analyze_all_dll
         )
         super()._run()
 
