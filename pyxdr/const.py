@@ -1,4 +1,4 @@
-__version__ = "1.0.2"
+__version__ = "1.1.0"
 
 XDR_API_KEY = "XDR_API_KEY"
 XDR_API_URL = "XDR_API_URL"
